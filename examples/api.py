@@ -1,4 +1,4 @@
-from backoffice import PWSAdmin
+from pwsadmin.backoffice import PWSAdmin
 
 from dotenv import load_dotenv, find_dotenv
 from os.path import dirname, join
@@ -24,8 +24,10 @@ def rooms():
     return jsonify(PWS.rooms())
 
 if __name__ == '__main__':
-    print 'This flask server is for DEVELOPMENT environments ONLY.'
+    print 'This Flask server is for DEVELOPMENT environments ONLY.'
+    print 'It runs with debug mode enable which allows for code execution.'
     print 'This SHOULD NOT be run in a production environment.'
+
     answer = raw_input('Do you wish to continue? (y/N) ').strip()
     if answer and answer.lower()[0] == 'y':
         app.run(debug=True)
