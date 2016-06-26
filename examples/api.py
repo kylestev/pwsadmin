@@ -18,6 +18,15 @@ PWS.login()
 
 app = Flask('pwsadmin')
 
+@app.route('/api/users/<userid>/transactions')
+def user_transactions(userid):
+    return jsonify({'transactions': PWS.user_transactions(userid, '2016-03-01', '2016-06-27')})
+
+@app.route('/api/db_info')
+def db_info():
+    global PWS
+    return jsonify(PWS.dbinfo())
+
 @app.route('/api/rooms')
 def rooms():
     global PWS
