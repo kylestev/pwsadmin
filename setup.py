@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from distutils.core import setup
 
 def parse_requirements():
     with open('requirements.txt') as f:
@@ -7,11 +7,11 @@ def parse_requirements():
 setup(
     name = 'pwsadmin',
     version = '0.1.0',
-    packages = find_packages(),
-    install_requires = parse_requirements(),
+    packages = ['pwsadmin'],
     author = 'Kyle Stevenson',
     author_email = 'kyle@kylestevenson.me',
-    description = 'A simple JSON API wrapper around the Pro Wager Systems backoffice software.',
+    description = 'A simple wrapper around the Pro Wager Systems backoffice software.',
+    download_url = 'https://github.com/kylestev/pwsadmin/tarball/0.1',
     keywords = 'pro wager systems',
     license = 'MIT',
     url = 'https://github.com/kylestev/pwsadmin'
